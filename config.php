@@ -1,7 +1,7 @@
 <?php
 
 // base URL, used for redirections
-define(BASE_URL, "https://bullarium..at/wtfrec/");
+define(BASE_URL, "https://bullarium.katholische-wahrheit.at/wtfrec/");
 define(USER_AGENT, "WTFrec/0.3");
 
 // system user for recording
