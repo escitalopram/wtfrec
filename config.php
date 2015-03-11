@@ -1,7 +1,7 @@
 <?php
 
 // base URL, used for redirections
-define(BASE_URL, "https://bullarium.xxxxxxxxxxxxxxxxxxxx.at/wtfrec/");
+define(BASE_URL, "https://bullarium..at/wtfrec/");
 define(USER_AGENT, "WTFrec/0.3");
 
 // system user for recording
@@ -18,6 +18,7 @@ define(CMD_ATQ,  "/usr/bin/atq");	// show current job queue
 define(CMD_ATRM, "/usr/bin/atrm");	// remove job from queue
 define(CMD_KILL, "/bin/kill");		// kill running job
 define(CMD_PS,   "/bin/ps -dux -ww");	// list running jobs
+define(CMD_RM,   "/bin/rm");		// delete recordings, only required to work within RECORDING_DIR
 define(CMD_STREAMRIPPER, "/usr/local/bin/streamripper");	// to rip audio streams
 define(CMD_RTMPDUMP,     "/usr/local/bin/rtmpdump");		// to dump video streams
 
