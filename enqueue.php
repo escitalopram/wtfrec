@@ -8,18 +8,19 @@ $title = preg_replace("/[^a-zA-Z0-9\.,_\-]/", "_", $_REQUEST["title"]);
 $seconds = $minutes*60;
 
 $source = null;
+$sourceShort = $_REQUEST["source"];	// "rma", "hor" etc.
 foreach ($SOURCES as $group) {
-	$source = $group[$_REQUEST["source"]];
+	$source = $group[$sourceShort];
 	if (isset($source))
 		break;
 }
 if (!isset($source)) die;
 
 if (!is_array($source)) die;
-$fname = RECORDING_DIR."$when-$title.".$source["suffix"];
+$fname = RECORDING_DIR."$when-$sourceShort-$title.".$source["suffix"];
 switch ($source["type"]) {
 	case "rtmpdump":
-		$record = CMD_RTMPDUMP." -#vr ".escapeshellarg($source["url"])." -o ".escapeshellarg($fname)." --stop $seconds";
+		$record = CMD_RTMPDUMP." -#vRr ".escapeshellarg($source["url"])." -o ".escapeshellarg($fname)." --stop $seconds";
 		break;
 	case "streamripper":
 		$record = CMD_STREAMRIPPER." ".escapeshellarg($source["url"])." --quiet -u ".escapeshellarg(USER_AGENT)." -l $seconds -A -a ".escapeshellarg($fname);
