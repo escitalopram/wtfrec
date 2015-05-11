@@ -77,11 +77,16 @@ require_once("config.php");
 <table>
 <?php
 $dir = opendir(RECORDING_DIR);
-while ($file = readdir($dir)) {
+$file_list = array();
+while ($file = readdir($dir))
 	if (strpos($file, ".") !== 0)
-		print "<tr><td><a href=\"".htmlentities("rec/$file")."\">".htmlentities($file)."</a></td><td><a href=\"delete.php?file=".htmlentities(urlencode($file))."\" onclick=\"return confirm('Wirklich löschen?')\">Löschen</a></td></tr>";
-}
+		$file_list[$file] = "<tr><td><a href=\"".htmlentities("rec/$file")."\">".htmlentities($file)."</a></td><td><a href=\"delete.php?file=".htmlentities(urlencode($file))."\" onclick=\"return confirm('Wirklich löschen?')\">Löschen</a></td></tr>";
 closedir($dir);
+
+ksort($file_list);
+foreach (array_reverse(array_values($file_list)) as $html)
+	print $html;
+
 ?>
 </table>
 
