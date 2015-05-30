@@ -39,6 +39,12 @@ $SOURCES = Array(
 			"type" => "streamripper",
 			"url" => "http://live.radiomaria.at:8000/rma",
 			"suffix" => "mp3"
+		),
+		"rms" => Array(
+			"name" => "Radio Maria Deutschschweiz",
+			"type" => "streamripper",
+			"url" => "http://live-two.dmd2.ch:8080/radiomaria_lo",
+			"suffix" => "mp3"
 		)
 	),
 	"TV" => Array(
