@@ -58,7 +58,8 @@ $SOURCES = Array(
 			"name" => "KTV",
 			"type" => "rtmpdump",
 			//"url" => "rtmp://85.214.122.245/ktv_hd/ktv2",
-			"url" => "rtmp://85.214.107.68:1935/ktv_hd/_definst_/ktv2",
+			//"url" => "rtmp://85.214.107.68:1935/ktv_hd/_definst_/ktv2",
+			"url" => "rtmp://85.214.72.27:1935/ktv_hd/_definst_/ktv2",
 			"suffix" => "flv"
 		)
 	)
