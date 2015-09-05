@@ -9,6 +9,5 @@ if [ -z "$1" ] ; then
 	echo ''
 else
 	echo "Downloading from ${1}"
-	echo wget -qO - "${1}sync.php"
 	wget -qO - "${1}sync.php" | grep '^https\?://' | wget -ci -
 fi
