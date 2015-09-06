@@ -11,7 +11,7 @@ if ($dir === false) {
 header("Content-Type: text/plain; charset=UTF-8");
 while ($file = readdir($dir))
         if (strpos($file, ".") !== 0)
-		echo BASE_URL . urlencode($file) . "\n";
+		echo BASE_URL . "rec/" .urlencode($file) . "\n";
 closedir($dir);
 ?>
 
